@@ -1,0 +1,28 @@
+<%= link_to "Nova localização", new_location_path %>
+<%if @location.present? %>
+	<p>Lista de localizações</p>
+	<table width="100%">
+		<tr>
+			<td><h3>ID</h3></td>
+			<td><h3>País</h3></td>
+			<td><h3>Região</h3></td>
+			<td><h3>Distrito</h3></td>
+			<td><h3>Concelho</h3></td>
+		</tr>
+		<%@location.each do |loc|%>
+			<tr>
+				<td><%=loc[:id]%></td>
+				<td><%=loc[:pais]%></td>
+				<td><%=loc[:regiao]%></td>
+				<td><%=loc[:distrito]%></td>
+				<td><%=loc[:concelho]%></td>
+				<td>
+					<%= link_to 'Editar', edit_location_path(loc) %> |
+					<%= link_to 'Eliminar', location_path(loc), :method => :delete %>
+				</td>
+			</tr>
+		<%end%>
+	</table>
+<%else%>
+	<p>Sem localizações</p>
+<%end%>

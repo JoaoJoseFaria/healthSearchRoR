@@ -1,0 +1,7 @@
+<%= form_tag locations_path, :method => :post do %>
+	País : <%=text_field_tag :pais%><br />
+	Região :<%=text_field_tag :regiao%><br/>
+	Distrito :<%=text_field_tag :distrito%><br />
+	Concelho :<%=text_field_tag :concelho%><br/><br/>
+	<%=submit_tag 'Save'%>
+<%end%>
