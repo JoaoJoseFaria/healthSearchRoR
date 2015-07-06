@@ -1,29 +1,28 @@
 <%= link_to "Nova localização", new_xmlocation_path %>
-<%= @xmlocation.class %>
 <%if @xmlocation.present? %>
-	<p><h1>Lista de localizações</h1></p>
-	<table width="100%">
-		<tr>
-			<td><h3>ID</h3></td>
-			<td><h3>País</h3></td>
-			<td><h3>Região</h3></td>
-			<td><h3>Distrito</h3></td>
-			<td><h3>Concelho</h3></td>
-		</tr>
-		<%@xmlocation.each do |loc|%>
-			<tr>
-				<td><%=loc[:id]%></td>
-				<td><%=loc[:pais]%></td>
-				<td><%=loc[:regiao]%></td>
-				<td><%=loc[:distrito]%></td>
-				<td><%=loc[:concelho]%></td>
-				<td>
-					<%= link_to 'Editar', edit_xmlocation_path(loc) %> |
-					<%= link_to 'Eliminar', xmlocation_path(loc), :method => :delete %>
-				</td>
-			</tr>
-		<%end%>
-	</table>
+  <p><h1>Lista de localizações</h1></p>
+  <table width="100%">
+    <tr>
+      <td><h3>ID</h3></td>
+      <td><h3>País</h3></td>
+      <td><h3>Região</h3></td>
+      <td><h3>Distrito</h3></td>
+      <td><h3>Concelho</h3></td>
+    </tr>
+    <%@xmlocation.each do |loc|%>
+      <tr>
+        <td><%=loc["id"]%></td>
+        <td><%=loc["pais"]%></td>
+        <td><%=loc["regiao"]%></td>
+        <td><%=loc["distrito"]%></td>
+        <td><%=loc["concelho"]%></td>
+        <td>
+          <%= link_to 'Editar', edit_xmlocation_path(id: loc["id"]) %> |
+          <%= link_to 'Eliminar', xmlocation_path(id: loc["id"]), :method => :delete %>
+        </td>
+      </tr>
+    <%end%>
+  </table>
 <%else%>
-	<p>Sem localizações</p>
+  <p>Sem localizações</p>
 <%end%>
