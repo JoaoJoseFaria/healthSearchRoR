@@ -1,6 +1,7 @@
-<%= link_to "Nova localização", new_locations_xml_path %>
-<%if @location_xml.present? %>
-	<p>Lista de localizações</p>
+<%= link_to "Nova localização", new_xmlocation_path %>
+<%= @xmlocation.class %>
+<%if @xmlocation.present? %>
+	<p><h1>Lista de localizações</h1></p>
 	<table width="100%">
 		<tr>
 			<td><h3>ID</h3></td>
@@ -9,7 +10,7 @@
 			<td><h3>Distrito</h3></td>
 			<td><h3>Concelho</h3></td>
 		</tr>
-		<%@location_xml["ArrayOfLocalizacao"]["Localizacao"].each do |loc|%>
+		<%@xmlocation.each do |loc|%>
 			<tr>
 				<td><%=loc[:id]%></td>
 				<td><%=loc[:pais]%></td>
@@ -17,8 +18,8 @@
 				<td><%=loc[:distrito]%></td>
 				<td><%=loc[:concelho]%></td>
 				<td>
-					<%= link_to 'Editar', edit_locations_xml_path(loc) %>
-					<%= link_to 'Eliminar', locations_xml_path(loc), :method => :delete %>
+					<%= link_to 'Editar', edit_xmlocation_path(loc) %> |
+					<%= link_to 'Eliminar', xmlocation_path(loc), :method => :delete %>
 				</td>
 			</tr>
 		<%end%>

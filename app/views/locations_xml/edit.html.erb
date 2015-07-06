@@ -1,7 +1,0 @@
-<%= form_tag location_xml_path, :method => :put do %>
-	País : <%= text_field_tag :pais, @location_xml[:pais] %><br />
-	Distrito :<%= text_field_tag :regiao, @location_xml[:regiao] %><br />
-	Região :<%= text_field_tag :distrito, @location_xml[:distrito] %><br/>
-	Concelho :<%= text_field_tag :concelho, @location_xml[:concelho] %><br/><br/>
-	<%= submit_tag 'Save' %>
-<%end%>
