@@ -1,0 +1,7 @@
+<%= form_tag xmlocation_path, :method => :put do %>
+	País : <%= text_field_tag :pais, @xmlocation['Localizacao']['pais'] %><br />
+	Distrito :<%= text_field_tag :regiao, @xmlocation['Localizacao']['regiao'] %><br />
+	Região :<%= text_field_tag :distrito, @xmlocation['Localizacao']['distrito'] %><br/>
+	Concelho :<%= text_field_tag :concelho, @xmlocation['Localizacao']['concelho'] %><br/><br/>
+	<%= submit_tag 'Save' %>
+<%end%>

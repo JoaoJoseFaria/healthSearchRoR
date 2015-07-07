@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
       redirect_to locations_path
     rescue Exception => e
       flash[:error] = 'Location Failed to save'
-      render :new
+      redirect_to new_location_path
     end
   end
 
